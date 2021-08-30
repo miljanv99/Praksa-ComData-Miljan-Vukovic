@@ -1,0 +1,35 @@
+<div id="celaApk">
+    <header>
+        <div id="ikonaNaslov">
+            <img src="../../assets/slike/logo.png">
+            <div>
+                <h1>Praksa ComData 2021</h1>
+                <p>By: Miljan Vukovic</p>
+            </div>
+        </div>
+    </header>
+   
+      
+          
+    <mat-card>
+        
+        <mat-tab-group mat-align-tabs="center">
+
+            <mat-tab label="Card tab">
+                <img class="imgDodajStudenta" (click)="openDialogUnos()" src="../../assets/slike/045-plus.svg">
+                <app-lista-studenata></app-lista-studenata>
+            </mat-tab>
+
+
+            <mat-tab label="Table">
+                <img class="imgDodajStudenta" (click)="openDialogUnos()" src="../../assets/slike/045-plus.svg">
+                <app-table></app-table>
+            </mat-tab>
+
+        </mat-tab-group>
+
+
+
+    </mat-card>
+    
+</div>

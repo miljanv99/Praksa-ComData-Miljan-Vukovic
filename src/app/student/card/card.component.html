@@ -1,0 +1,23 @@
+<div class="Indetifikacija">
+
+    <div class="osnovneInformacije">
+        <div class="slikaiID">
+            <img *ngIf="korisnik.gender==='male'" src="../../assets/slike/muski avatar.jpg">
+            <img *ngIf="korisnik.gender==='female'" src="../../assets/slike/zenski avatar.png">
+            <mat-card-title>ID: {{korisnik.id}}. {{korisnik.name}}</mat-card-title>
+
+
+        </div>
+        <h4>Email: {{korisnik.email}}</h4>
+
+    </div>
+</div>
+<div class="dodatneInformacije">
+    <p><span>Gender: </span> {{korisnik.gender}}</p>
+    <p [ngClass]="{activeDa:korisnik.status==='active', activeNe:korisnik.status==='inactive'}"><span>Status: </span>{{korisnik.status}}</p>
+    
+</div>
+<div class="detaljnije">
+    <img src="../../assets/slike/resume.png">
+    <button mat-raised-button color="primary" (click)="openDialogDetaljnije()">Detaljnije</button>
+</div>

@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#celaApk{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-width: 505px;
+}
+header{
+    width: 100%;
+    height: 120px;
+    background-color: #053742;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#ikonaNaslov{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#ikonaNaslov h1{
+    font-size:3em;
+    color: #548CA8;
+    /*text-shadow: 2px 2px rgb(194,24,91);*/
+}
+
+#ikonaNaslov img{
+    width: 140px;
+    height: 100px;
+    margin-right: 5px;
+}
+
+#ikonaNaslov div:first-of-type{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+#ikonaNaslov div:first-of-type p{
+    font-size: 1.4rem;
+    font-style: italic;
+    color: whitesmoke
+    
+}
+
+mat-card.mat-focus-indicator{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+}
+
+mat-card.mat-card.mat-focus-indicator {
+    padding: 0;
+    background: linear-gradient(to bottom right, #488cac, transparent)
+}
+
+.imgDodajStudenta{
+    width: 50px;
+    height: 50px;
+    margin-left: 10%;
+    margin-top: 1%;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.imgDodajStudenta:hover{
+    width: 55px;
+    height: 55px;
+}
+
+
+ @media screen and (max-width: 850px) {
+    #ikonaNaslov h1{
+        text-align: center;
+    }
+    
+   }
+

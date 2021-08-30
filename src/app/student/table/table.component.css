@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#Tabela{
+    width: 100%;
+    background: #00000026;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 20px;
+}
+#Tabela th, #Tabela tr{
+    text-align: center;
+}
+.imgDodajStudentaUTabelu{
+    width: 50px;
+    height: 50px;
+    margin-left: 10%;
+    margin-top: 1%;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.imgDodajStudentaUTabelu:hover{
+    width: 55px;
+    height: 55px;
+}

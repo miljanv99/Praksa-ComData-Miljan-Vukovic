@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Detalji o studentu</h1>
+
+<div mat-dialog-content>
+  <img *ngIf="data.gender==='male'"
+    [ngClass]="{borderInactive:data.status==='inactive', borderActive:data.status==='active'}"
+    src=".././../../assets/slike/muski avatar.jpg">
+  <img *ngIf="data.gender==='female'"
+    [ngClass]="{borderInactive:data.status==='inactive', borderActive:data.status==='active'}"
+    src=".././../../assets/slike/zenski avatar.png">
+  <ul>
+    <li><span>ID:</span> {{data.id}}</li>
+    <li><span>Ime i prezime:</span> {{data.name}}</li>
+    <li><span>Email:</span> {{data.email}}</li>
+    <li><span>Gender:</span> {{data.gender}}</li>
+    <li><span>Status:</span> {{data.status}}</li>
+  </ul>
+</div>
+<div class="divButton">
+  <button mat-focus-indicator mat-raised-button mat-button-base mat-primary mat-dialog-close>
+    Cancel</button>
+</div>

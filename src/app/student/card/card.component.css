@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.detaljnije{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.detaljnije img{
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+.osnovneInformacije{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 1.5em;
+}
+
+
+.slikaiID{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.slikaiID img{
+    width: 80px;
+    
+}
+
+
+
+
+
+.dodatneInformacije{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    
+}
+
+.dodatneInformacije p{
+    font-weight: 700;
+}
+
+
+
+
+.activeNe{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color:rgb(252 68 68) !important;
+}
+
+.activeDa{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color:rgb(147 250 44 / 72%)!important;
+}
+
+button{
+    width: 85px;
+    height: 35px;
+    transition: all 0.3s;
+    background-color: #334257 !important;
+}
+button:hover{
+    width: 95px;
+    height: 40px;
+    
+}
+
+
+
+
+
+@media screen and (max-width: 1100px) {
+
+
+    .Indetifikacija{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .slikaiID{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .slikaiID img{
+        width: 130px;
+    }
+    .osnovneInformacije{
+        width: 100%;
+        margin-right: 40px;
+        font-size: 2em;
+    }
+    .dodatneInformacije p{
+        font-size: xx-large;
+    }
+    
+    button {
+        width: 190px;
+        height: 60px;
+        border: none;
+        margin-right: 10px;
+        margin-top: 15px;
+        border-radius: 10px;
+        color: whitesmoke;
+        transition: all 0.3s;
+    }
+    button:hover{
+        width: 220px;
+        height: 70px;
+    }
+
+  
+    
+
+    .dodatneInformacije {
+        font-size: 2em;
+    }
+}
+@media screen and (max-width: 830px) {
+    button{
+        width: 160px;
+        height: 50px;
+    }
+    button:hover{
+        width: 180px;
+        height: 60px;
+    }
+    .dodatneInformacije p{
+        font-size: x-large;
+    }
+}
+
+@media screen and (max-width: 750px) {
+   img{
+       width: 100px;
+   }
+   .Indetifikacija{
+       margin-top: 15px;
+   }
+}
+
+@media screen and (max-width: 735px) {
+  button{
+      width: 100px;
+      height: 45px;
+  }
+  button:hover{
+    width: 120px;
+    height: 55px;
+    }
+ }
+ @media screen and (max-width: 550px) {
+    .detaljnije img{
+        display: none;
+    }
+    .Indetifikacija{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .slikaiID img {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+     h1{
+        font-size: large;
+        
+    }
+}

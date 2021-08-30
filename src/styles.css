@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+.greskaSnackBar{
+    background: red;
+    color: whitesmoke ;
+}
+
+.snackBarDobroDosao{
+    background-color: #6398b2
+    ;
+    color: whitesmoke;
+}
+.mat-dialog-container{
+    min-width: 416px !important;
+}
+
+.mat-dialog-container{
+    padding:0 !important;
+    overflow: unset !important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #053742;
+}
+.mat-form-field-ripple{
+    background-color: #488cac !important;
+}
+.mat-radio-inner-circle{
+    background-color: #488cac !important;
+
+}
+@media screen and (max-width: 1100px) {
+    app-card{
+        width: 100% !important;
+        height: 275px !important;
+        }
+    }
