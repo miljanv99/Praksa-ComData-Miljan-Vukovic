@@ -1,0 +1,24 @@
+<div class="Indetifikacija">
+
+    <div class="osnovneInformacije">
+        <div class="slikaiID">
+            <img *ngIf="userCard.gender==='male'" src="../../assets/slike/muski avatar.jpg">
+            <img *ngIf="userCard.gender==='female'" src="../../assets/slike/zenski avatar.png">
+            <mat-card-title>ID: {{userCard.id}}. {{userCard.name}}</mat-card-title>
+
+
+        </div>
+        <h4>Email: {{userCard.email}}</h4>
+
+    </div>
+</div>
+<div class="dodatneInformacije">
+    <p><span>Gender: </span> {{userCard.gender}}</p>
+    <p [ngClass]="{activeDa:userCard.status==='active', activeNe:userCard.status==='inactive'}"><span>Status: </span>{{userCard.status}}</p>
+    
+</div>
+<div class="detaljnije">
+    <img src="../../assets/slike/resume.png" (click)="openDialogEdit()">
+    <img src="../../../assets/slike/outline_delete_black_24dp.png" (click)="openDialogDelete()">
+    <button mat-raised-button color="primary" (click)="openDialogDetails()">Details</button>
+</div>

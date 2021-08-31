@@ -1,8 +1,8 @@
 import { PaginationModel } from "./pagination.model";
-import { Student } from "./student.model";
+import { User } from "./user.model";
 
-export interface StudentsDataResponse {
-    data: Student[];
+export interface UserDataResponse {
+    data: User[];
     meta: {
         pagination: PaginationModel
     }

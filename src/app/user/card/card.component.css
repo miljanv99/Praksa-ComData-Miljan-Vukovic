@@ -17,6 +17,11 @@
 .detaljnije img{
     width: 40px;
     height: 40px;
+    transition: all 0.5s;
+}
+.detaljnije img:last-of-type:hover{
+    width: 44px;
+    height: 44px;
 }
 
 
@@ -175,7 +180,7 @@ button:hover{
     }
  }
  @media screen and (max-width: 550px) {
-    .detaljnije img{
+    .detaljnije img:first-of-type{
         display: none;
     }
     .Indetifikacija{

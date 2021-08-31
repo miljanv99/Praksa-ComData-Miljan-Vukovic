@@ -11,6 +11,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background: red;
     color: whitesmoke ;
 }
+.OKSnackBar{
+    background-color: green;
+    color: whitesmoke;
+}
 
 .snackBarDobroDosao{
     background-color: #6398b2

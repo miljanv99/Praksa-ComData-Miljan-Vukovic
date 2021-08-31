@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListaStudenataComponent } from './lista-studenata.component';
+import { DialogSubmitComponent } from './dialog-submit.component';
 
-describe('ListaStudenataComponent', () => {
-  let component: ListaStudenataComponent;
-  let fixture: ComponentFixture<ListaStudenataComponent>;
+describe('DialogUnosComponent', () => {
+  let component: DialogSubmitComponent;
+  let fixture: ComponentFixture<DialogSubmitComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListaStudenataComponent ]
+      declarations: [ DialogSubmitComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListaStudenataComponent);
+    fixture = TestBed.createComponent(DialogSubmitComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

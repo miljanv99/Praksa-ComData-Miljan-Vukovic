@@ -2,20 +2,20 @@
 
   <mat-form-field appearance="legacy">
     <mat-label>Name</mat-label>
-    <input matInput placeholder="Enter your name" [(ngModel)]='student.name' name='name' required>
+    <input matInput placeholder="Enter your name" [(ngModel)]='user.name' name='name' required>
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     <mat-hint>Hint</mat-hint>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Email</mat-label>
-    <input matInput placeholder="pat@example.com" [(ngModel)]='student.email' name='email' required>
+    <input matInput placeholder="pat@example.com" [(ngModel)]='user.email' name='email' required>
   </mat-form-field>
 
   
   <mat-form-field appearance="fill">
     <mat-label>Status</mat-label>
-    <mat-select [(ngModel)]='student.status' name='status' required>
+    <mat-select [(ngModel)]='user.status' name='status' required>
       <mat-option value="active">active</mat-option>
       <mat-option value="inactive">inactive</mat-option>
       <!-- <mat-option *ngFor="let studentIzListe of listaStudenata" value="studentIzListe.status">
@@ -25,7 +25,7 @@
   </mat-form-field>
 
 
-  <mat-radio-group aria-label="Select an option" [(ngModel)]='student.gender' name='gender' required>
+  <mat-radio-group aria-label="Select an option" [(ngModel)]='user.gender' name='gender' required>
     <mat-radio-button value='male'>Male</mat-radio-button>
     <mat-radio-button value='female'>Female</mat-radio-button>
   </mat-radio-group>

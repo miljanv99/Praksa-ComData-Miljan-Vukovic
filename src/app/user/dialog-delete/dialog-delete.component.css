@@ -1,0 +1,18 @@
+h1{
+    width: 100%;
+    background-color: rgb(5,55,66);
+    color: white;
+    text-shadow: 2px 2px #488cac;
+    text-align: center;
+}
+
+.mat-dialog-content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.divButton{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}

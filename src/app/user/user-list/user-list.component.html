@@ -1,0 +1,11 @@
+<div id="Komp1">
+
+    <div class="Roditelj" *ngFor="let userParameter of userList">
+        
+        <app-card class="kartica" [userCard]="userParameter" (deleteUser)='getAllUsers()'></app-card>
+        <span></span>
+    </div>
+
+
+
+</div>

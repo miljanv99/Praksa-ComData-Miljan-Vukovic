@@ -1,44 +1,45 @@
+//Components
+import { AppComponent } from './app.component';
+import { UserComponent } from './user/user.component';
+import { TableComponent } from './user/table/table.component';
+import { CardComponent } from './user/card/card.component';
+import { DialogUserComponent } from './user/dialog-user/dialog-user.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { DialogSubmitComponent } from './user/dialog-submit/dialog-submit.component';
+//Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { StudentComponent } from './student/student.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
 import { AppRoutingModule } from './app-routing.module';
-import { TableComponent } from './student/table/table.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import { CardComponent } from './student/card/card.component';
-import { DialogUserComponent } from './student/dialog-user/dialog-user.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { ListaStudenataComponent } from './student/lista-studenata/lista-studenata.component';
-import { DialogUnosComponent } from './student/dialog-unos/dialog-unos.component';
-import {MatInputModule} from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
-import {FormsModule}   from '@angular/forms';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatSelectModule} from '@angular/material/select';
-
-
-
-
-
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+//TokenInterceptor
+import { TokenInterceptor } from './auth/token.interceptor';
+import { DialogDeleteComponent } from './user/dialog-delete/dialog-delete.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentComponent,
+    UserComponent,
     TableComponent,
     CardComponent,
     DialogUserComponent,
-    ListaStudenataComponent,
-    DialogUnosComponent
+    UserListComponent,
+    DialogSubmitComponent,
+    DialogDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +60,13 @@ import {MatSelectModule} from '@angular/material/select';
     MatRadioModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
