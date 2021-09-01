@@ -56,7 +56,12 @@
     background-color: rgb(147 250 44 / 72%) !important; 
 }
 
-
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    margin-left: 25px;
+}
 
 
 @media screen and (max-width: 1201px) {
