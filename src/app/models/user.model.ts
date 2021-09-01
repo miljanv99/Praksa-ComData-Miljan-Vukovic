@@ -5,9 +5,6 @@ export class User {
      gender: string;
      status: string;
      constructor(
-
      ) { }
-
-
 }
 

@@ -1,44 +1,31 @@
+<table id="Tabela" mat-table [dataSource]="userList" class="mat-elevation-z8">
 
-    <table id="Tabela" mat-table [dataSource]="userList" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let student" (click)="openDialogDetails(student)"> {{student.id}} </td>
+  </ng-container>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let student" (click)="openDialogDetails(student)"> {{student.name}} </td>
+  </ng-container>
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let student" (click)="openDialogDetails(student)"> {{student.email}} </td>
+  </ng-container>
+  <ng-container matColumnDef="gender">
+    <th mat-header-cell *matHeaderCellDef> Gender </th>
+    <td mat-cell *matCellDef="let student" (click)="openDialogDetails(student)"> {{student.gender}} </td>
+  </ng-container>
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let student" (click)="openDialogDetails(student)"> {{student.status}}</td>
+  </ng-container>
 
-        <ng-container matColumnDef="id" >
-          <th mat-header-cell *matHeaderCellDef> ID </th>
-          <td mat-cell *matCellDef="let student"(click)="openDialogDetails(student)"> {{student.id}}  </td>
-        </ng-container>
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Name </th>
-            <td mat-cell *matCellDef="let student"(click)="openDialogDetails(student)"> {{student.name}} </td>
-          </ng-container>
-          <ng-container matColumnDef="email">
-            <th mat-header-cell *matHeaderCellDef> Email </th>
-            <td mat-cell *matCellDef="let student" (click)="openDialogDetails(student)"> {{student.email}} </td>
-          </ng-container>
-          <ng-container matColumnDef="gender">
-            <th mat-header-cell *matHeaderCellDef>  Gender </th>
-            <td mat-cell *matCellDef="let student"(click)="openDialogDetails(student)"> {{student.gender}} </td>
-          </ng-container >
-          <ng-container matColumnDef="status">
-            <th mat-header-cell *matHeaderCellDef> Status </th>
-            <td mat-cell *matCellDef="let student"(click)="openDialogDetails(student)"> {{student.status}}</td>
-          </ng-container>
-          
-          
-          
-      
-        
-      
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-      <!--<mat-paginator [length]="userList.length"
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<!--<mat-paginator [length]="userList.length"
       [pageSizeOptions]="[6,12]"
        aria-label="Select page"
        (page)="">
      </mat-paginator>-->
-      
-      
-      
-      
-  
-  
-  

@@ -6,6 +6,8 @@ import { CardComponent } from './user/card/card.component';
 import { DialogUserComponent } from './user/dialog-user/dialog-user.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { DialogSubmitComponent } from './user/dialog-submit/dialog-submit.component';
+import { DialogDeleteComponent } from './user/dialog-delete/dialog-delete.component';
+
 //Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,9 +27,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 //TokenInterceptor
 import { TokenInterceptor } from './auth/token.interceptor';
-import { DialogDeleteComponent } from './user/dialog-delete/dialog-delete.component';
 
 
 @NgModule({
@@ -58,7 +60,8 @@ import { DialogDeleteComponent } from './user/dialog-delete/dialog-delete.compon
     MatIconModule,
     FormsModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     {

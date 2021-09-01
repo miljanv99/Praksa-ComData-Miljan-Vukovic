@@ -15,23 +15,22 @@ export class ServiceDataService {
   constructor(private http: HttpClient) {
     //koristimo apiURL iz enviroment.ts
     //mozes ovde staviti + users
-    this.pageURL = environment.apiURL;
+    this.pageURL = environment.apiURL + '/users/';
   }
 
-  getUsers(): Observable<UserDataResponse> {
-    return this.http.get<UserDataResponse>(`${this.pageURL}/users`);
+  getUsers(name: string): Observable<UserDataResponse> {
+    return this.http.get<UserDataResponse>(this.pageURL + "?name="+name);
   }
 
   addUser(user: User): Observable<UserDataResponse> {
-    return this.http.post<UserDataResponse>(`${this.pageURL}/users`, user);
+    return this.http.post<UserDataResponse>(this.pageURL, user);
   }
+
+  editUser(user: User): Observable<UserDataResponse> {//
+    return this.http.put<UserDataResponse>(this.pageURL + user.id, user);
+  }
+
   deleteUser(userID: Number) {
-    return this.http.delete(`${this.pageURL}/users/` + userID);
+    return this.http.delete(this.pageURL + userID);
   }
-  editUser(user:User): Observable<UserDataResponse>{
-    return this.http.post<UserDataResponse>(`${this.pageURL}/users`, user);
-  }
-
-
-
 }

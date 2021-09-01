@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
+import { UserDataResponse } from 'src/app/models/user-data-response.model';
 import { User } from 'src/app/models/user.model';
 import { ServiceDataService } from 'src/app/service/service-data.service';
 import { DialogUserComponent } from '../dialog-user/dialog-user.component';
@@ -13,45 +16,52 @@ import { DialogUserComponent } from '../dialog-user/dialog-user.component';
 export class UserListComponent implements OnInit {
 
   userList: User[] = [];
-  constructor(private userService: ServiceDataService,
-              private dialog: MatDialog,
-              private snackBar:MatSnackBar) {
+  isLoading = false;
+  searchValue:string="";
+  search$: Subject<string>= new Subject();//observable koja dobija vredost
 
+  constructor(private userService: ServiceDataService,
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar) {
+      this.searchSubscription();
   }
   ngOnInit(): void {
     this.getAllUsers();
   }
 
-
- 
-  openDialog(user:User) {
-   this.dialog.open(DialogUserComponent,{
-     width:"400px",
-     height:"350px",
-     //data:{id:student.id,name:student.name,email:student.email,
-       //   gender:student.gender,status:student.status}
-       data:user
-   })
-    
+  openDialog(user: User) {
+    this.dialog.open(DialogUserComponent, {
+      width: "400px",
+      data: user
+    })
   }
 
-  errorSnackBar(){
-    this.snackBar.open("Something went wrong","Ok",{
-      panelClass:['greskaSnackBar']
+  errorSnackBar() {
+    this.snackBar.open("Something went wrong", "Ok", {
+      panelClass: ['greskaSnackBar']
     });
-    
   }
 
-   getAllUsers(): void {
-    this.userService.getUsers().subscribe((data: any) => {
+  getAllUsers(): void {
+    this.isLoading = true;
+    this.userService.getUsers(this.searchValue).subscribe((data: UserDataResponse) => {
+      this.isLoading = false;
       this.userList = data.data;
-      console.log(data);
-    }, error=>{
-      this.userList=[];
-      this.errorSnackBar()
-    }
-    );
+    }, error => {
+      this.userList = [];
+      this.errorSnackBar();
+    });
+  }
 
+  private searchSubscription(){
+    this.search$.pipe(
+      debounceTime(500)
+    ).subscribe(//on ceka promenu inputa
+      (value:string)=>{
+        this.getAllUsers();
+      }
+      
+    );
 
   }
 

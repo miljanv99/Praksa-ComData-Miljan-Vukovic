@@ -19,7 +19,7 @@
     height: 40px;
     transition: all 0.5s;
 }
-.detaljnije img:last-of-type:hover{
+.detaljnije img:hover{
     width: 44px;
     height: 44px;
 }

@@ -1,11 +1,13 @@
-<div id="Komp1">
-
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Search</mat-label>
+    <input matInput [(ngModel)]="searchValue" (keyup)="search$.next(searchValue)">
+</mat-form-field>
+<div color="primary" class="spinnerParent">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>
+<div id="Komp1" *ngIf="!isLoading">
     <div class="Roditelj" *ngFor="let userParameter of userList">
-        
-        <app-card class="kartica" [userCard]="userParameter" (deleteUser)='getAllUsers()'></app-card>
+        <app-card class="kartica" [userCard]="userParameter" (changeUsers)='getAllUsers()'></app-card>
         <span></span>
     </div>
-
-
-
 </div>

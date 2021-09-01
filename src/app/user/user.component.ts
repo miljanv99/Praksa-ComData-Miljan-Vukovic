@@ -10,13 +10,12 @@ import { DialogSubmitComponent } from './dialog-submit/dialog-submit.component';
 })
 export class UserComponent implements OnInit {
   
-  constructor(private snackBar : MatSnackBar,
-              private dialogSubmit: MatDialog) {
-
+  constructor(private dialogSubmit: MatDialog,
+              private snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
-   this.loadSnackBar();
+    this.loadSnackBar();
   }
 
   loadSnackBar(){
@@ -24,20 +23,12 @@ export class UserComponent implements OnInit {
       duration: 3500, panelClass: ['snackBarDobroDosao']
     });
   }
-
   
   openDialogSubmit(){
     this.dialogSubmit.open(DialogSubmitComponent,{
-      width:"500px",
-      height:"450px"
+      width:"500px"
     })
-
   }
-  
-
-
-  
-
 }
 
 

@@ -78,6 +78,10 @@ mat-card.mat-card.mat-focus-indicator {
     height: 55px;
 }
 
+.mat-tab-group > .mat-tab:first-of-type .form{
+    margin-left: 20px;
+}
+
 
  @media screen and (max-width: 850px) {
     #ikonaNaslov h1{

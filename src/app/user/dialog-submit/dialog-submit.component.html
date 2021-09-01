@@ -1,5 +1,4 @@
 <form #userPost="ngForm" (ngSubmit)="onSubmitTemplateBased()">
-
   <mat-form-field appearance="legacy">
     <mat-label>Name</mat-label>
     <input matInput placeholder="Enter your name" [(ngModel)]='user.name' name='name' required>
@@ -9,33 +8,26 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Email</mat-label>
-    <input matInput placeholder="pat@example.com" [(ngModel)]='user.email' name='email' required>
+    <input matInput placeholder="pat@example.com" [(ngModel)]='user.email' name='email' required email>
   </mat-form-field>
-
   
   <mat-form-field appearance="fill">
     <mat-label>Status</mat-label>
     <mat-select [(ngModel)]='user.status' name='status' required>
       <mat-option value="active">active</mat-option>
-      <mat-option value="inactive">inactive</mat-option>
-      <!-- <mat-option *ngFor="let studentIzListe of listaStudenata" value="studentIzListe.status">
-        {{studentIzListe.status}}
-      </mat-option>-->
+      <mat-option value="inactive">inactive</mat-option><!--mozes i napraviti listu u ts pa protrcati kroz nju-->
     </mat-select>
   </mat-form-field>
-
 
   <mat-radio-group aria-label="Select an option" [(ngModel)]='user.gender' name='gender' required>
     <mat-radio-button value='male'>Male</mat-radio-button>
     <mat-radio-button value='female'>Female</mat-radio-button>
   </mat-radio-group>
 
-  
-
   <div>
-    <button mat-focus-indicator mat-raised-button mat-button-base mat-primary type="submit">Submit</button>
     <button mat-focus-indicator mat-raised-button mat-button-base mat-primary mat-dialog-close>
       Cancel</button>
+    <button mat-focus-indicator mat-raised-button mat-button-base mat-primary type="submit" [disabled]='!userPost.valid'>Submit</button>
   </div>
 
 </form>
